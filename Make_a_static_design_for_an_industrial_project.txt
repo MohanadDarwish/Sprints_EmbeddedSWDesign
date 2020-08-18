@@ -1,0 +1,45 @@
+Case Study: Customer Requirments (Moving Robot)
+-Robot has four DC motors.
+-Robot can move in the four Directions.
+	-forward
+	-backward
+	-right
+	-left
+-Robot has character LCD to display the moving direction.
+
+@At Power Up:
+	-Robot moves forward with increasing speed from 0% to 100% speed for 5 seconds.
+	-Robotenters Running State.
+@At Running State.
+	-Robot decreases its speed gradually to 50% in 5 seconds.
+	-Robot rotates right 90degrees clockwise.
+	-Robot decrease its speed gradually to 0% in 5 seconds.
+	
+Task1: 
+	-Extract the modules from Moving Robot requirements.
+	-Design module APIs
+=============================================================
+Module1 : DC Motor Module
+Module2 : LCD Module
+Module3 : Timer Module
+
+DC Motor Module APIs:
+	-DC_Init(void);
+	-DC_Move(bool direction, uint16 speed, uint8 accelration, uint32 timeInSeconds);
+	
+LCD Module APIs:
+	-LCD_Init();
+	-LCD_PrintStaticText(uint8* text, uint8 lineNumber);
+	-LCD_PrintMovingText(uint8* text, bool moveDirection); 
+	-LCD_SetBackLight(uint8 backLightPercent);
+	-LCD_Clear();
+
+Timer Module APIs:
+	-Timer_Init(bool timerMode, uint32 clockSource);
+	-Timer_Start(uint8 timeInSeconds);
+	-Timer_Stop();
+	-Timer_Reset();
+	-Timer_SetINTHandler( fnPtr* handler);
+	
+
+
